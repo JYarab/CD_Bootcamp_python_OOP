@@ -43,7 +43,7 @@ class User:
 	def transfer_money(self, acctName, amount, user, toAcctName):
 		if (acctName == 'savings' or acctName == 'checking') and (toAcctName == "savings" or toAcctName == "checking"):
 			if acctName == 'savings':
-				if (self.savings.balance >= amount and toAcctName == 'savings') or (self.savings.balance >= amount and toAcctName =='checking'):
+				if self.savings.balance >= amount:
 					self.savings.withdraw(amount)
 					if toAcctName == 'savings':
 						user.savings.deposit(amount)
@@ -57,7 +57,7 @@ class User:
 					print("Insufficient Funds")
 					return self
 			if acctName == 'checking':
-				if (self.checking.balance >= amount and toAcctName == 'savings') or (self.savings.balance >= amount and toAcctName =='checking'):
+				if self.checking.balance >= amount:
 					self.checking.withdraw(amount)
 					if toAcctName == 'savings':
 						user.savings.deposit(amount)
