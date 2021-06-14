@@ -8,8 +8,12 @@ class BankAccount:
 		return self
 
 	def withdraw(self, amount):
-		self.balance -= amount
-		return self
+		if self.balance >= amount:
+			self.balance -= amount
+			return self
+		else:
+			print("Insufficient Funds")
+			return self
 
 	def display_account_info(self):
 		print(f"Current balance is ${'%.2f'%self.balance}. Current interest rate is {self.int_rate*100}%")
