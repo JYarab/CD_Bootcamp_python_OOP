@@ -6,10 +6,12 @@ class User:
 
     def make_deposit(self, amount):
         self.account_balance += amount
+        print(f"{self.name} desposited ${amount} into their account")
 
     def make_withdrawl(self, amount):
         if self.account_balance >= amount:
             self.account_balance -= amount
+            print(f"{self.name} withdrew ${amount} from their account")
         else:
             print("Insufficient Funds")
 
@@ -19,6 +21,7 @@ class User:
     def transfer_money(self, amount, user):
         self.account_balance -= amount
         user.account_balance += amount
+        print(f"{self.name} trasfered ${amount} to {user.name}'s account")
 
 John = User('John', 'J_Jones@gmail.com')
 Bob = User('Bob', 'Bob_Villa@gmail.com')
