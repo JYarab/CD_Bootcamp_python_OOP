@@ -42,3 +42,5 @@ Sally.make_deposit(100).make_withdrawl(10).make_withdrawl(10).make_withdrawl(10)
 John.transfer_money(10, Sally).display_user_balance()
 
 Sally.display_user_balance()
+
+print(Sally.display_user_balance())

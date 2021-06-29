@@ -5,17 +5,19 @@ class User:
 		self.savings = BankAccount(int_rate = 0.02, balance = 0)
 		self.checking = BankAccount(int_rate = 0.00, balance = 0)
 
-	def make_deposit(self, acctName, amount):
-		#self.acctName.deposit(amount)
-		if acctName == 'savings':
-			self.savings.deposit(amount)
-			return self
-		elif acctName == 'checking':
-			self.checking.deposit(amount)
-			return self
-		else:
-			print('Invalid account name.')
-			return self
+	def make_deposit(self,amount , **acctName):
+		print(acctName)
+		self.acctName.deposit(amount)
+
+		# if acctName == 'savings':
+		# 	self.savings.deposit(amount)
+		# 	return self
+		# elif acctName == 'checking':
+		# 	self.checking.deposit(amount)
+		# 	return self
+		# else:
+		# 	print('Invalid account name.')
+		# 	return self
 
 	def make_withdrawl(self, acctName, amount):
 		if acctName == 'savings':
@@ -105,7 +107,7 @@ John = User('John', 'J_Jones@gmail.com')
 Bob = User('Bob', 'Bob_Villa@gmail.com')
 Sally = User('Sally', 'Sally.Moris@yahoo.com')
 
-John.make_deposit('savings', 100)
+John.make_deposit(acctName = 'savings',amount = 100)
 
-John.transfer_money('savings',50,Sally,'checking')
-Sally.display_user_balance('checking')
+# John.transfer_money('savings',50,Sally,'checking')
+# Sally.display_user_balance('checking')

@@ -15,7 +15,7 @@ class User:
 
 
 	def display_user_balance(self):
-		print(f"{self.name}'s account Balance is: ${self.account.balance}")
+		print(self.account.display_account_info())
 		return self
 	
 	def transfer_money(self, amount, user):
@@ -48,7 +48,7 @@ class BankAccount:
 
 	def display_account_info(self):
 		print(f"Current balance is ${'%.2f'%self.balance}. Current interest rate is {self.int_rate*100}%")
-		return self
+		#return self
 
 	def yield_interest(self):
 		self.balance += round(self.balance*self.int_rate,2)
@@ -61,27 +61,31 @@ Bob = User('Bob', 'Bob_Villa@gmail.com')
 Sally = User('Sally', 'Sally.Moris@yahoo.com')
 
 John.make_deposit(50)
-John.make_deposit(50)
-John.make_deposit(50)
-John.make_withdrawl(25)
-
 John.display_user_balance()
 
-Bob.make_deposit(50)
-Bob.make_deposit(100)
-Bob.make_withdrawl(10)
-Bob.make_withdrawl(20)
+print(John)
 
-Bob.display_user_balance()
+# John.make_deposit(50)
+# John.make_deposit(50)
+# John.make_withdrawl(25)
 
-Sally.make_deposit(100)
-Sally.make_withdrawl(10)
-Sally.make_withdrawl(10)
-Sally.make_withdrawl(10)
+# John.display_user_balance()
 
-Sally.display_user_balance()
+# Bob.make_deposit(50)
+# Bob.make_deposit(100)
+# Bob.make_withdrawl(10)
+# Bob.make_withdrawl(20)
 
-John.transfer_money(10, Sally)
+# Bob.display_user_balance()
 
-John.display_user_balance()
-Sally.display_user_balance()
+# Sally.make_deposit(100)
+# Sally.make_withdrawl(10)
+# Sally.make_withdrawl(10)
+# Sally.make_withdrawl(10)
+
+# Sally.display_user_balance()
+
+# John.transfer_money(10, Sally)
+
+# John.display_user_balance()
+# Sally.display_user_balance()
